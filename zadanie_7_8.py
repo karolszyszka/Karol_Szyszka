@@ -42,8 +42,8 @@ class Brewery:
     def __str__(self):
             return f"Brewery(id={self.id}, name={self.name}, city={self.city}, state={self.state}, type={self.brewery_type})"
 
-def fetch_breweries(limit: int = 20):
-    url = f"https://api.openbrewerydb.org/v1/breweries?per_page={limit}"
+def fetch_breweries(limit: int = 20, where: str="Denver"):
+    url = f"https://api.openbrewerydb.org/v1/breweries?per_page={limit}&by_city={where}"
     response = requests.get(url)
     data = response.json()
     breweries = []
@@ -73,7 +73,11 @@ def fetch_breweries(limit: int = 20):
     return breweries
 
 
-if __name__ == "__main__":
-    breweries = fetch_breweries(20)
-    for b in breweries:
+
+print("Ile browarów chciałbyś zobaczyć?: ")
+amount=int(input())
+print("W jakim mieście?: ")
+where=input()
+breweries = fetch_breweries(amount, where)
+for b in breweries:
         print(b)

@@ -1,6 +1,6 @@
 import requests
 from typing import Optional
-
+import argparse
 
 class Brewery:
     def __init__(
@@ -42,8 +42,8 @@ class Brewery:
     def __str__(self):
             return f"Brewery(id={self.id}, name={self.name}, city={self.city}, state={self.state}, type={self.brewery_type})"
 
-def fetch_breweries(limit: int = 20, where: str="Denver"):
-    url = f"https://api.openbrewerydb.org/v1/breweries?per_page={limit}&by_city={where}"
+def fetch_breweries(where: str):
+    url = f"https://api.openbrewerydb.org/v1/breweries?by_city={where}"
     response = requests.get(url)
     data = response.json()
     breweries = []
@@ -72,12 +72,9 @@ def fetch_breweries(limit: int = 20, where: str="Denver"):
 
     return breweries
 
-
-
-print("Ile browarów chciałbyś zobaczyć?: ")
-amount=int(input())
-print("W jakim mieście?: ")
-where=input()
-breweries = fetch_breweries(amount, where)
+WhereParse= argparse.ArgumentParser(description="Breweries parser")
+WhereParse.add_argument("--city", type=str, default="Berlin", help="Where are the breweries")
+args = WhereParse.parse_args()
+breweries = fetch_breweries(args.city)
 for b in breweries:
         print(b)

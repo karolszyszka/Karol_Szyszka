@@ -4,5 +4,5 @@ def func(number:int)->bool:
     else:
         wynik = False
     return wynik
-print(func(6))
+print(func(4))
 print(func(9))

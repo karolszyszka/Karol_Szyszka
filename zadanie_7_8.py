@@ -13,14 +13,7 @@ class Brewery:
         address_3: Optional[str],
         city: Optional[str],
         state: Optional[str],
-        county_province: Optional[str],
-        postal_code: Optional[str],
-        country: Optional[str],
-        longitude: Optional[str],
-        latitude: Optional[str],
-        phone: Optional[str],
-        website_url: Optional[str],
-        state_province: Optional[str]
+
     ):
         self.id = id
         self.name = name
@@ -30,14 +23,6 @@ class Brewery:
         self.address_3 = address_3
         self.city = city
         self.state = state
-        self.county_province = county_province
-        self.postal_code = postal_code
-        self.country = country
-        self.longitude = longitude
-        self.latitude = latitude
-        self.phone = phone
-        self.website_url = website_url
-        self.state_province = state_province
 
     def __str__(self):
             return f"Brewery(id={self.id}, name={self.name}, city={self.city}, state={self.state}, type={self.brewery_type})"
@@ -59,14 +44,7 @@ def fetch_breweries(where: str):
                 address_3=item.get("address_3"),
                 city=item.get("city"),
                 state=item.get("state"),
-                county_province=item.get("county_province"),
-                postal_code=item.get("postal_code"),
-                country=item.get("country"),
-                longitude=item.get("longitude"),
-                latitude=item.get("latitude"),
-                phone=item.get("phone"),
-                website_url=item.get("website_url"),
-                state_province=item.get("state_province"),
+
             )
         )
 

@@ -9,7 +9,7 @@ class Property:
         return f"Dzielnica:{self.area},  Pomieszczenia:{self.rooms}, Cena: {self.price}, adres: {self.address}"
 
 
-Property1 = Property("Centrum", "15", "13400", "Katowicka 12")
+
 
 
 class House(Property):
@@ -30,7 +30,3 @@ class Flat(Property):
         return f"Piętro {self.floor}, Dzielnica: {self.area} Cena: {self.price}, Adres: {self.address}"
 
 
-House1 = House("Katowice", "12", "12330", "Koszutka", 123)
-Flat1 = Flat(3, "Kraków", "2", "210002", "Studencka 7")
-print(House1)
-print(Flat1)

@@ -10,8 +10,7 @@ class Library:
         return f"City= {self.city}, Street= {self.street}, Zip Cpde = {self.zip_code}, Phone= {self.phone}"
 
 
-biblioteka1 = Library("Berlin", "Lazurowa", "44-212", "7-18", 774980223)
-biblioteka2 = Library("Warszawa", "Złota", "23-423", "8-16", 223445197)
+
 
 
 class Employee:
@@ -39,37 +38,6 @@ class Employee:
         return f"First name = {self.first_name}, Last Name = {self.last_name}, Hire date= {self.hire_date}, Birth date= {self.birth_date}, city = {self.city}, Street= {self.street}, Zip Code= {self.zip_code}, Phone= {self.phone}"
 
 
-pracownik1 = Employee(
-    "Wiktor",
-    "Szpak",
-    "23.11.2024",
-    "12.07.2000",
-    "Warszawa",
-    "Jesionowa",
-    "23-423",
-    878234121,
-)
-pracownik2 = Employee(
-    "Hans",
-    "Frank",
-    "12.10.1999",
-    "07.02.1942",
-    "Berlin",
-    "Powstancow",
-    "44-212",
-    235666789,
-)
-pracownik3 = Employee(
-    "Karol",
-    "Dziubka",
-    "05.05.2025",
-    "12.01.2004",
-    "Katowice",
-    "Abażurowa",
-    "42-721",
-    552978546,
-)
-
 
 class Book:
     def __init__(self, publication_date, author_name, author_surname, number_of_pages):
@@ -81,13 +49,6 @@ class Book:
 
     def str(self):
         return f"Publication date = {self.publication_date}, Author name= {self.author_name}, Author Surname= {self.author_surname}, Number of Pages = {self.number_of_pages}"
-
-
-Wladca_pierscieni = Book("21.11.1970", "J.R.R", "Tolkien", "612")
-Metro2033 = Book("2012", "Dmitry", "Glukhovski", "701")
-PrinciplesOfManagment = Book("1998", "Ricky", "Griffin", "539")
-Biblia = Book("0", "Natchniony", "Autor", "3219")
-Mein_Kampf = Book("1920", "Adolf", "Hitler", "242")
 
 
 class Order:
@@ -104,9 +65,3 @@ class Order:
         return f"{self.student} wypozyczyl od {self.employee} ksiazke {self.books}, dnia {self.order_date}"
 
 
-Zamowienie1 = Order("Karol", "Ania", "", "21.12.2025")
-Zamowienie1.ksiazki(Wladca_pierscieni.author_surname)
-Zamowienie2 = Order("Hans", "Emiliaa", "", "11.07.2025")
-Zamowienie2.ksiazki(Metro2033.author_surname)
-print(Zamowienie1)
-print(Zamowienie2)

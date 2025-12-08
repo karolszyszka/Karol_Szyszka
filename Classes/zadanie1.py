@@ -10,7 +10,4 @@ class Student:
             return False
 
 
-student1 = Student("Karol", 75)
-student2 = Student("Emily", 44)
-print(student1.is_passed())
-print(student2.is_passed())
+

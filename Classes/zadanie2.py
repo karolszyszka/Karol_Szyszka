@@ -50,7 +50,6 @@ class Book:
     def str(self):
         return f"Publication date = {self.publication_date}, Author name= {self.author_name}, Author Surname= {self.author_surname}, Number of Pages = {self.number_of_pages}"
 
-
 class Order:
     def __init__(self, employee, student, books, order_date):
         self.employee = employee
